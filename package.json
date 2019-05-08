@@ -25,6 +25,7 @@
     "@root": ".",
     "@app": "app",
     "@controllers": "app/controllers",
+    "@services": "app/services",
     "@routes": "app/routes",
     "@tests": "app/tests"
   },
