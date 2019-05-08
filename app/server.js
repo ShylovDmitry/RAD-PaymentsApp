@@ -1,12 +1,14 @@
 const express = require('express');
-const path = require('path');
 const bodyParser = require('body-parser');
-const logger = require('morgan');
+const morgan = require('morgan');
 
 const app = express();
 const port = process.env.PORT || 3001;
 
-app.use(logger('dev'));
+if (process.env.NODE_ENV !== 'test') {
+    app.use(morgan('dev'));
+}
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(bodyParser.json());
